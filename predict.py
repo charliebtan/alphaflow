@@ -19,6 +19,7 @@ parser.add_argument('--self_cond', action='store_true', default=False)
 parser.add_argument('--noisy_first', action='store_true', default=False)
 parser.add_argument('--runtime_json', type=str, default=None)
 parser.add_argument('--no_overwrite', action='store_true', default=False)
+parser.add_argument('--run_only', type=int, default=None, help='Run only a single item from the dataset')
 args = parser.parse_args()
 
 import torch, tqdm, os, wandb, json, time
@@ -103,6 +104,8 @@ def main():
     os.makedirs(args.outpdb, exist_ok=True)
     runtime = defaultdict(list)
     for i, item in enumerate(valset):
+        if args.run_only is not None and i != args.run_only:
+            continue
         if args.pdb_id and item['name'] not in args.pdb_id:
             continue
         if args.no_overwrite and os.path.exists(f'{args.outpdb}/{item["name"]}.pdb'):
