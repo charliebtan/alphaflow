@@ -160,6 +160,8 @@ def prots_to_pdb(prots):
     ss = ''
     for i, prot in enumerate(prots):
         ss += f'MODEL {i}\n'
+        if prot.chain_index is None:
+            prot.chain_index = np.zeros_like(prot.residue_index, dtype=np.int32)
         prot = to_pdb(prot)
         ss += '\n'.join(prot.split('\n')[1:-2])
         ss += '\nENDMDL\n'

@@ -100,7 +100,6 @@ def main():
     
     logger.info("Model has been loaded")
     
-    results = defaultdict(list)
     os.makedirs(args.outpdb, exist_ok=True)
     runtime = defaultdict(list)
     for i, item in enumerate(valset):
@@ -120,11 +119,10 @@ def main():
                         no_diffusion=args.no_diffusion, schedule=schedule, self_cond=args.self_cond)
             runtime[item['name']].append(time.time() - start)
             result.append(prots[-1])
-            
 
-
-        with open(f'{args.outpdb}/{item["name"]}.pdb', 'w') as f:
-            f.write(protein.prots_to_pdb(result))
+        for i in range(len(result)):
+            with open(f'{args.outpdb}/{item["name"]}_{i}.pdb', 'w') as f:
+                f.write(protein.prots_to_pdb(result[i:i+1]))
 
     if args.runtime_json:
         with open(args.runtime_json, 'w') as f:

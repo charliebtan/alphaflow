@@ -1,0 +1,14 @@
+module purge
+micromamba create -n alphaflow python=3.9
+micromamba activate alphaflow
+pip install numpy==1.21.2 pandas==1.5.3 torch==2.5.1 biopython dm-tree==0.1.6 modelcif==0.7 ml-collections==0.1.0 scipy==1.7.1 absl-py einops pytorch_lightning==2.0.4 fair-esm mdtraj==1.9.9 wandb ipdb
+module load cudatoolkit/12.6
+echo $CUDA_HOME
+echo $CUDA_PATH
+export CUDA_PATH=$CUDA_HOME
+echo $LIBRARY_PATH
+echo $LD_LIBRARY_PATH
+pip install ninja
+git clone -b pl_upgrades https://github.com/aqlaboratory/openfold.git
+cd openfold/
+python setup.py install
