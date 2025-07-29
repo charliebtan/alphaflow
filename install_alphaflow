@@ -1,0 +1,126 @@
+ 1985  module load cudatoolkit/11.8
+ 1986  micromamba create -n alphaflow python=3.9
+ 1987  pip install numpy==1.21.2 pandas==1.5.3
+ 1988  pip install torch==1.12.1+cu118 -f https://download.pytorch.org/whl/torch_stable.html
+ 1989  pip install numpy==1.21.2 pandas==1.5.3
+ 1990  micromamba activate alphaflow 
+ 1991  pip install numpy==1.21.2 pandas==1.5.3
+ 1992  pip install torch==1.12.1+cu113 -f https://download.pytorch.org/whl/torch_stable.html
+ 1993  pip install biopython==1.79 dm-tree==0.1.6 modelcif==0.7 ml-collections==0.1.0 scipy==1.7.1 absl-py einops
+ 1994  pip install pytorch_lightning==2.0.4 fair-esm mdtraj==1.9.9 wandb
+ 1995  pip install pytorch_lightning==2.0.4 fair-esm mdtraj==1.9.9 
+ 1996  pip install pytorch_lightning==2.0.4 
+ 1997  pip install lightning==2.0.4 
+ 1998  pip install lightning==2.0.4 torch==1.12.1+cu113 -f https://download.pytorch.org/whl/torch_stable.html
+ 1999  pip install fair-esm mdtraj==1.9.9 wandb
+ 2000  pip install 'openfold @ git+https://github.com/aqlaboratory/openfold.git@103d037'
+ 2001  cd ~/alphaflow
+ 2002  python predict.py --mode esmfold --input_csv splits/atlas_test.csv --weights esmflow_pdb_distilled_202402.pt --samples 1 --outpdb results
+ 2003  module load cudatoolkit/11.3
+ 2004  pip install 'openfold @ git+https://github.com/aqlaboratory/openfold.git@103d037'
+ 2005  pip install lightning==2.0.4 torch==1.12.1+cu118 -f https://download.pytorch.org/whl/torch_stable.html
+ 2006  pip install lightning==2.0.4 torch==1.12.1+cu116 -f https://download.pytorch.org/whl/torch_stable.html
+ 2007  module load cudatoolkit/11.6
+ 2008  pip install 'openfold @ git+https://github.com/aqlaboratory/openfold.git@103d037'
+ 2009  module load gcc/9.3.0
+ 2010  pip install 'openfold @ git+https://github.com/aqlaboratory/openfold.git@103d037'
+ 2011  micromamba install -c conda-forge gxx<11
+ 2012  micromamba install -c conda-forge gxx<=10
+ 2013  micromamba install -c conda-forge 'gxx<=10'
+ 2014  micromamba install -c conda-forge 'gxx<11'
+ 2015  pip install 'openfold @ git+https://github.com/aqlaboratory/openfold.git@103d037'
+ 2016  which g++
+ 2017  micromamba instlal 'cudatoolkit=11.6' -c nvidia 
+ 2018  micromamba install 'cudatoolkit=11.6' -c nvidia 
+ 2019  which nvcc
+ 2020  pip install 'openfold @ git+https://github.com/aqlaboratory/openfold.git@103d037'
+ 2021  micromamba install 'cudatoolkit=11.6' cudnn -c nvidia 
+ 2022  micromamba install 'cudatoolkit=11.6' cudnn -c conda-forge
+ 2023  pip install 'openfold @ git+https://github.com/aqlaboratory/openfold.git@103d037'
+ 2024  module purge
+ 2025  pip install 'openfold @ git+https://github.com/aqlaboratory/openfold.git@103d037'
+ 2026  micromamba install gcc-multilib -c conda-forge
+ 2027  micromamba install libstdcxx-ng -c conda-forge
+ 2028  micromamba install gcc-multilib -c conda-forge
+ 2029  micromamba libstdcxx-ng -c conda-forge
+ 2030  micromamba install libstdcxx-ng -c conda-forge
+ 2031  micromamba create -n alphaflow python=3.9
+ 2032  pip install numpy=1.21.2 pyandas==1.5.3 torch==2.5.1 biopython dm-tree==0.1.6 modelcif==0.7 ml-collections==0.1.0 scipy==1.7.1 absl-py einops pytorch_lightning==2.0.4 fair-esm mdtraj==1.9.9 wandb
+ 2033  pip install numpy==1.21.2 pyandas==1.5.3 torch==2.5.1 biopython dm-tree==0.1.6 modelcif==0.7 ml-collections==0.1.0 scipy==1.7.1 absl-py einops pytorch_lightning==2.0.4 fair-esm mdtraj==1.9.9 wandb
+ 2034  pip install numpy==1.21.2 pandas==1.5.3 torch==2.5.1 biopython dm-tree==0.1.6 modelcif==0.7 ml-collections==0.1.0 scipy==1.7.1 absl-py einops pytorch_lightning==2.0.4 fair-esm mdtraj==1.9.9 wandb
+ 2035  git clone -b pl_upgrades https://github.com/aqlaboratory/openfold.git
+ 2036  cd openfold/
+ 2037  pip install -e .
+ 2038  python predict.py --mode esmfold --input_csv splits/atlas_test.csv --weights esmflow_pdb_distilled_202402.pt --samples 1 --outpdb results
+ 2039  cd ..
+ 2040  python predict.py --mode esmfold --input_csv splits/atlas_test.csv --weights ~/scratch/esmflow_pdb_distilled_202402.pt --samples 1 --outpdb results
+ 2041  python predict.py --mode alphafold --input_csv splits/atlas_test.csv --weights ~/scratch/alphaflow_md_base_202402.pt --samples 1 --outpdb results
+ 2042  python predict.py --mode alphafold --input_csv splits/atlas_test.csv --weights ~/scratch/alphaflow_md_base_202402.pt --samples 1 --outpdb results --msa_dir ~/scratch/alignment
+ 2043  vim alphaflow/model/alphafold.py 
+ 2044  fg
+ 2045  python predict.py --mode alphafold --input_csv splits/atlas_test.csv --weights ~/scratch/alphaflow_md_base_202402.pt --samples 1 --outpdb results --msa_dir ~/scratch/alignment
+ 2046  fg
+ 2047  python predict.py --mode alphafold --input_csv splits/atlas_test.csv --weights ~/scratch/alphaflow_md_base_202402.pt --samples 1 --outpdb results --msa_dir ~/scratch/alignment
+ 2048  ls ~/scratch/alignment/
+ 2049  vim splits/atlas_test.csv 
+ 2050  vim splits/
+ 2051  cd splits/
+ 2052  ls
+ 2053  cp atlas_test.csv atlas_one_test.csv
+ 2054  vim atlas_one_test.csv 
+ 2055  ls ~/scratch/alignment/
+ 2056  python predict.py --mode alphafold --input_csv splits/atlas_one_test.csv --weights ~/scratch/alphaflow_md_base_202402.pt --samples 1 --outpdb results --msa_dir ~/scratch/alignment
+ 2057  cd ..
+ 2058  python predict.py --mode alphafold --input_csv splits/atlas_one_test.csv --weights ~/scratch/alphaflow_md_base_202402.pt --samples 1 --outpdb results --msa_dir ~/scratch/alignment
+ 2059  ls ~/scratch/alignment/6uof_A/a3m/6uof_A.a3m 
+ 2060  cat ~/scratch/alignment/6uof_A/a3m/6uof_A.a3m 
+ 2061  python predict.py --mode alphafold --input_csv splits/atlas_one_test.csv --weights ~/scratch/alphaflow_md_base_202402.pt --samples 1 --outpdb results --msa_dir ~/scratch/alignment
+ 2062  vim /home/mila/a/alexander.tong/alphaflow/alphaflow/data/data_pipeline.py
+ 2063  fg
+ 2064  python predict.py --mode alphafold --input_csv splits/atlas_one_test.csv --weights ~/scratch/alphaflow_md_base_202402.pt --samples 1 --outpdb results --msa_dir ~/scratch/alignment
+ 2065  fg
+ 2066  python predict.py --mode alphafold --input_csv splits/atlas_one_test.csv --weights ~/scratch/alphaflow_md_base_202402.pt --samples 1 --outpdb results --msa_dir ~/scratch/alignment
+ 2067  pip install ipdb
+ 2068  python predict.py --mode alphafold --input_csv splits/atlas_one_test.csv --weights ~/scratch/alphaflow_md_base_202402.pt --samples 1 --outpdb results --msa_dir ~/scratch/alignment
+ 2069  fg
+ 2070  python predict.py --mode alphafold --input_csv splits/atlas_one_test.csv --weights ~/scratch/alphaflow_md_base_202402.pt --samples 1 --outpdb results --msa_dir ~/scratch/alignment
+ 2071  vim /home/mila/a/alexander.tong/alphaflow/openfold/openfold/data/data_transforms.py
+ 2072  vim /home/mila/a/alexander.tong/alphaflow/alphaflow/data/input_pipeline.py
+ 2073  fg
+ 2074  vim /home/mila/a/alexander.tong/alphaflow/alphaflow/data/input_pipeline.py
+ 2075  fg
+ 2076  python predict.py --mode alphafold --input_csv splits/atlas_one_test.csv --weights ~/scratch/alphaflow_md_base_202402.pt --samples 1 --outpdb results --msa_dir ~/scratch/alignment
+ 2077  module load cudatoolkit/12.6
+ 2078  python predict.py --mode alphafold --input_csv splits/atlas_one_test.csv --weights ~/scratch/alphaflow_md_base_202402.pt --samples 1 --outpdb results --msa_dir ~/scratch/alignment
+ 2079  cd openfold/
+ 2080  python setup.py install
+ 2081  python predict.py --mode alphafold --input_csv splits/atlas_one_test.csv --weights ~/scratch/alphaflow_md_base_202402.pt --samples 1 --outpdb results --msa_dir ~/scratch/alignment
+ 2082  cd  ..
+ 2083  python predict.py --mode alphafold --input_csv splits/atlas_one_test.csv --weights ~/scratch/alphaflow_md_base_202402.pt --samples 1 --outpdb results --msa_dir ~/scratch/alignment
+ 2084  echo $CUDA_HOME
+ 2085  echo $CUDA_PATH
+ 2086  export CUDA_PATH=$CUDA_HOME
+ 2087  echo $LIBRARY_PATH
+ 2088  echo $LD_LIBRARY_PATH
+ 2089  cd openfold/
+ 2090  pip install -e .
+ 2091  python setup.py install
+ 2092  pip install ninja
+ 2093  python setup.py install
+ 2094  cd ..
+ 2095  python predict.py --mode alphafold --input_csv splits/atlas_one_test.csv --weights ~/scratch/alphaflow_md_base_202402.pt --samples 1 --outpdb result
+ 2096  python predict.py --mode alphafold --input_csv splits/atlas_one_test.csv --weights ~/scratch/alphaflow_md_base_202402.pt --samples 1 --outpdb result --msa_dir ~/scratch/alignment
+ 2097  vim /home/mila/a/alexander.tong/alphaflow/predict.py
+ 2098  python predict.py --mode alphafold --input_csv splits/atlas_one_test.csv --weights ~/scratch/alphaflow_md_base_202402.pt --samples 1 --outpdb result --msa_dir ~/scratch/alignment
+ 2099  fg
+ 2100  python predict.py --mode alphafold --input_csv splits/atlas_one_test.csv --weights ~/scratch/alphaflow_md_base_202402.pt --samples 1 --outpdb result --msa_dir ~/scratch/alignment
+ 2101  fg
+ 2102  python predict.py --mode alphafold --input_csv splits/atlas_one_test.csv --weights ~/scratch/alphaflow_md_base_202402.pt --samples 1 --outpdb result --msa_dir ~/scratch/alignment
+ 2103  fg
+ 2104  python predict.py --mode alphafold --input_csv splits/atlas_one_test.csv --weights ~/scratch/alphaflow_md_base_202402.pt --samples 1 --outpdb result --msa_dir ~/scratch/alignment
+ 2105  vim /network/scratch/a/alexander.tong/micromamba/envs/alphaflow/lib/python3.9/site-packages/openfold-2.2.0-py3.9-linux-x86_64.egg/openfold/np/protein.py
+ 2106  fg
+ 2107  python predict.py --mode alphafold --input_csv splits/atlas_one_test.csv --weights ~/scratch/alphaflow_md_base_202402.pt --samples 1 --outpdb result --msa_dir ~/scratch/alignment
+ 2108  gs
+ 2109  gdiff
+ 2110  history > install_alphaflow

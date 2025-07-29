@@ -72,10 +72,16 @@ class AlphaFold(nn.Module):
             )
             self.extra_msa_stack = ExtraMSAStack(
                 **self.extra_msa_config["extra_msa_stack"],
+                opm_first=False,
+                fuse_projection_weights=False,
             )
         
         self.evoformer = EvoformerStack(
             **self.config["evoformer_stack"],
+            no_column_attention=False,
+            opm_first=False,
+            fuse_projection_weights=False,
+
         )
         self.structure_module = StructureModule(
             **self.config["structure_module"],
